@@ -20,6 +20,10 @@
   --font-pixel2: "Pixel2Font", ui-sans-serif, system-ui;
 }
 
-.cursor-paint {
-  cursor: url("./images/cursor/paint.ico") 16 16, cell !important;
+.cursor-pen {
+  cursor: url("./images/cursor/pen.ico") 16 16, cell !important;
+}
+
+.cursor-eraser {
+  cursor: url("./images/cursor/eraser.ico") 16 16, pointer !important;
 }

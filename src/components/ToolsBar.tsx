@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { HeightSlider, WidthSlider } from "./Tools/SizeSlider";
 import ColorPlate from "./Tools/ColorPlate";
+import Tools from "./Tools";
 
 type ToolsBarProps = {
   className?: string;
@@ -19,7 +20,9 @@ function ToolsBar({ className }: ToolsBarProps) {
   }, [width, height, resize]);
 
   return (
-    <div className={cn("bg-gray-400 w-full rounded-t-2xl", className)}>
+    <div className={cn("bg-gray-400 w-full", className)}>
+      <Tools />
+
       <div className="flex items-center space-x-3.5 w-full justify-center py-2">
         <ColorPlate />
       </div>

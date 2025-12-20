@@ -14,19 +14,31 @@ function Pixel({ point, color, border = true, className }: PixelProps) {
 
   const { paint } = usePixelGrid();
   const { tools } = useTools();
+
   const handlePaint = () => {
-    paint(point, tools.currentColor);
+    const _color = tools.currentTool == "pen" ? tools.currentColor : undefined;
+    paint(point, _color);
   };
 
   return (
     <span
       className={cn(
-        "block w-full h-full box-border cursor-paint",
+        "block w-full h-full box-border",
         "border-gray-950",
         border && "border border-gray-400",
+        tools.currentTool == "pen" && "cursor-pen",
+        tools.currentTool == "eraser" && "cursor-eraser",
+        color === undefined &&
+          ((point.x + point.y) % 2 == 0 ? "bg-gray-300" : "bg-gray-200"),
         className
       )}
-      style={{ backgroundColor: isHovered ? tools.currentColor : color }}
+      style={{
+        backgroundColor: isHovered
+          ? tools.currentTool == "pen"
+            ? tools.currentColor
+            : undefined
+          : color,
+      }}
       onMouseDown={handlePaint}
       onMouseEnter={() => {
         setIsHovered(true);

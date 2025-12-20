@@ -6,7 +6,9 @@ function useTools() {
   const changePaintingStatus = useToolsStore(
     (state) => state.changePaintingStatus
   );
-  return { tools, changeColor, changePaintingStatus };
+  const changeTool = useToolsStore((state) => state.changeTool);
+
+  return { tools, changeColor, changePaintingStatus, changeTool };
 }
 
 export default useTools;
