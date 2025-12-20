@@ -4,4 +4,5 @@
 .prettierignore
 
 # Folders
+.vscode/
 node_modules/

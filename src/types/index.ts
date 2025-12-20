@@ -1,1 +1,1 @@
-export type * from "./Plate";
+export type * from "./Pixel";
