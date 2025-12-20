@@ -1,6 +1,7 @@
 # Files
 .env
 .prettierrc
+.prettierignore
 
 # Folders
 node_modules/
