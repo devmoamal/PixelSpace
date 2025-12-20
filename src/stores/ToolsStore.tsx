@@ -1,3 +1,4 @@
+import { DEFAULT_COLOR, DEFAULT_TOOL } from "@/constants";
 import type { PixelColor, Util } from "@/types";
 import { create } from "zustand";
 
@@ -28,9 +29,9 @@ function changeTool(tools: Tools, tool: Util) {
 
 const useToolsStore = create<ToolsStoreState>((set) => ({
   tools: {
-    currentTool: "pen",
+    currentTool: DEFAULT_TOOL,
     isPainting: false,
-    currentColor: "#000",
+    currentColor: DEFAULT_COLOR,
   },
 
   changeColor: (color) =>

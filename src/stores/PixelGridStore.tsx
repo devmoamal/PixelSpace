@@ -1,3 +1,4 @@
+import { EMPTY_PIXEL_COLOR } from "@/constants";
 import type { PixelGrid, PixelColor, Pixel, Size, Point } from "@/types";
 import { create } from "zustand";
 
@@ -5,11 +6,12 @@ type PixelGridStoreState = {
   grid: PixelGrid;
   paint: (point: Point, color: PixelColor) => void;
   resize: (size: Size) => void;
+  clear: () => void;
 };
 
 const createPixel = (point: Point): Pixel => ({
   point: point,
-  color: undefined,
+  color: EMPTY_PIXEL_COLOR,
 });
 
 const paintPixel = (
@@ -51,6 +53,14 @@ const resize = (grid: PixelGrid, size: Size) => {
   return newGrid;
 };
 
+const clear = (grid: PixelGrid) => {
+  return grid.map((_y) =>
+    _y.map((pixel) => {
+      return { ...pixel, color: EMPTY_PIXEL_COLOR };
+    })
+  );
+};
+
 const usePixelGridStore = create<PixelGridStoreState>((set) => ({
   grid: [],
   paint: (point, color) =>
@@ -58,6 +68,7 @@ const usePixelGridStore = create<PixelGridStoreState>((set) => ({
       grid: paintPixel(state.grid, point, color),
     })),
   resize: (size) => set((state) => ({ grid: resize(state.grid, size) })),
+  clear: () => set((state) => ({ grid: clear(state.grid) })),
 }));
 
 export default usePixelGridStore;

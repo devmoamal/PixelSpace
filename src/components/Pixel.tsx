@@ -5,11 +5,10 @@ import type { Pixel as _Pixel } from "@/types";
 import { useState } from "react";
 
 type PixelProps = _Pixel & {
-  border?: boolean;
   className?: string;
 };
 
-function Pixel({ point, color, border = true, className }: PixelProps) {
+function Pixel({ point, color, className }: PixelProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const { paint } = usePixelGrid();
@@ -25,7 +24,6 @@ function Pixel({ point, color, border = true, className }: PixelProps) {
       className={cn(
         "block w-full h-full box-border",
         "border-gray-950",
-        border && "border border-gray-400",
         tools.currentTool == "pen" && "cursor-pen",
         tools.currentTool == "eraser" && "cursor-eraser",
         color === undefined &&

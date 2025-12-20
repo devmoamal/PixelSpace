@@ -1,3 +1,4 @@
+import { DEFAULT_COLOR } from "@/constants";
 import { cn } from "@/lib/utils";
 import type { PixelColor } from "@/types";
 
@@ -9,7 +10,7 @@ type ColorProps = {
 };
 
 function Color({
-  color = "#000",
+  color = DEFAULT_COLOR,
   selected = true,
   onClick,
   className,

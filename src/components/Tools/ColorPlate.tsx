@@ -8,8 +8,8 @@ type ColorPlateProps = {
 };
 
 const staticColors: PixelColor[] = [
-  "#000",
-  "#fff",
+  "#000000",
+  "#ffffff",
   "#808080",
   "#008000",
   "#800080",
@@ -26,7 +26,7 @@ function ColorPlate({ className }: ColorPlateProps) {
   const { tools, changeColor } = useTools();
 
   return (
-    <div className={cn("flex gap-1", className)}>
+    <div className={cn("flex gap-1 my-1", className)}>
       {staticColors.map((color) => (
         <Color
           color={color}

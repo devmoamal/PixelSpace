@@ -30,7 +30,7 @@ const tools: Tools[] = [
 
 function Tools({ className }: ToolsProps) {
   return (
-    <div className={cn("flex gap-4 w-full justify-center my-4", className)}>
+    <div className={cn("flex gap-4 w-full justify-center mt-4", className)}>
       {tools.map((tool) => (
         <Tool name={tool.name} slug={tool.slug} iconSrc={tool.iconSrc} />
       ))}
