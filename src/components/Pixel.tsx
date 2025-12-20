@@ -21,12 +21,13 @@ function Pixel({ point, color, border = true, className }: PixelProps) {
   return (
     <span
       className={cn(
-        `border-gray-950 p-1`,
-        `hover:bg-[${color}]`,
-        border && "border",
+        "block w-full h-full box-border cursor-paint",
+        "border-gray-950",
+        border && "border border-gray-400",
         className
       )}
       style={{ backgroundColor: isHovered ? tools.currentColor : color }}
+      onMouseDown={handlePaint}
       onMouseEnter={() => {
         setIsHovered(true);
         if (tools.isPainting) {

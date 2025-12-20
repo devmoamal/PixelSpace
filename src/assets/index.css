@@ -19,3 +19,7 @@
   --font-pixel: "PixelFont", ui-sans-serif, system-ui;
   --font-pixel2: "Pixel2Font", ui-sans-serif, system-ui;
 }
+
+.cursor-paint {
+  cursor: url("./images/cursor/paint.ico") 16 16, cell !important;
+}

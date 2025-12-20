@@ -16,15 +16,10 @@ function ToolsBar({ className }: ToolsBarProps) {
 
   useEffect(() => {
     resize({ width, height });
-  }, [width, height]);
+  }, [width, height, resize]);
 
   return (
-    <div
-      className={cn(
-        "bg-gray-400 absolute bottom-0 w-full rounded-t-2xl",
-        className
-      )}
-    >
+    <div className={cn("bg-gray-400 w-full rounded-t-2xl", className)}>
       <div className="flex items-center space-x-3.5 w-full justify-center py-2">
         <ColorPlate />
       </div>

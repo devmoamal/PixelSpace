@@ -7,9 +7,9 @@ function App() {
   const { grid } = usePixelGrid();
 
   return (
-    <div className="font-pixel2">
+    <div className="font-pixel2 h-screen flex flex-col">
       <NavBar />
-      <div className="flex justify-center mt-4">
+      <div className="flex-1 p-1">
         <PixelGrid grid={grid} />
       </div>
       <ToolsBar />
