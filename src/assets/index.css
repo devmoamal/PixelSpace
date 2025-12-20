@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "PixelFont";
+  src: url("./fonts/PixelifySans.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pixel2Font";
+  src: url("./fonts/Tiny5.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-pixel: "PixelFont", ui-sans-serif, system-ui;
+  --font-pixel2: "Pixel2Font", ui-sans-serif, system-ui;
+}
